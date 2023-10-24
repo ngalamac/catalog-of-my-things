@@ -8,7 +8,7 @@ require './options/list_game'
 class App
   include ListGames
   include AddGame
-  include ListLabels
+
 
   include StoreData
   include LoadData

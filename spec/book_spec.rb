@@ -1,54 +1,58 @@
-require_relative '../classes/item'
-require_relative '../classes/book'
-require 'date'
+require './classes/book'
 require 'rspec'
 
-RSpec.describe Book do
-  let(:publish_date) { Date.new(2017, 1, 1) }
-  let(:publisher) { 'Ngala Mac' }
-  let(:cover_state) { 'good' }
+describe Book do
+  before :all do
+    @book = Book.new 'Publisher', 'good', '2022-12-12'
+    @new_book_good = Book.new 'Publisher', 'good', '2022-12-12'
+    @old_book_good = Book.new 'Publisher', 'good', '1990-12-12'
+    @new_book_bad = Book.new 'Publisher', 'BaD', '2022-12-12'
+    @old_book_bad = Book.new 'Publisher', 'BaD', '1990-12-12'
+  end
 
-  subject(:book) { described_class.new(publish_date, publisher, cover_state) }
+  context '#new' do
+    it 'should take three parameters and return a Book object' do
+      expect(@book).to be_an_instance_of Book
+    end
 
-  describe '#initialize' do
-    it 'sets the id, publish_date, publisher, and cover_state' do
-      expect(book.publish_date).to eq(publish_date)
-      expect(book.publisher).to eq(publisher)
-      expect(book.cover_state).to eq(cover_state)
+    it 'publish_date should be an istance of Date' do
+      expect(@book.publish_date).to be_an_instance_of Date
     end
   end
 
-  describe '#can_be_archived?' do
-    context 'when the cover state is in good condition' do
-      let(:cover_state) { 'good' }
-
-      it 'returns false' do
-        expect(book.send(:can_be_archived?)).to eq(false)
-      end
+  context 'should have correct attributes' do
+    it 'should return the correct publisher' do
+      expect(@book.publisher).to eq 'Publisher'
     end
 
-    context 'when the cover state is in bad condition' do
-      let(:cover_state) { 'bad' }
-
-      it 'returns true' do
-        expect(book.send(:can_be_archived?)).to eq(true)
-      end
+    it 'should return the correct cover_state' do
+      expect(@book.cover_state).to eq 'good'
     end
 
-    context 'when the publication date is above 10 years' do
-      let(:publish_date) { Date.today - (11 * 365) }
-
-      it 'returns true' do
-        expect(book.send(:can_be_archived?)).to eq(true)
-      end
+    it 'should return the correct publish_date' do
+      expect(@book.publish_date.year).to eq 2022
     end
 
-    context 'when the publication date is 10 years and below' do
-      let(:publish_date) { Date.today - (10 * 365) }
+    it 'should return the correct archived' do
+      expect(@book.archived).to eq false
+    end
+  end
 
-      it 'returns false' do
-        expect(book.send(:can_be_archived?)).to eq(false)
-      end
+  context '#can_be_archived?' do
+    it 'should return false for @new_book_good' do
+      expect(@new_book_good.instance_eval('can_be_archived?', __FILE__, __LINE__)).to eq false
+    end
+
+    it 'should return true for @old_book_good' do
+      expect(@old_book_good.instance_eval('can_be_archived?', __FILE__, __LINE__)).to eq true
+    end
+
+    it 'should return true for @new_book_bad' do
+      expect(@new_book_bad.instance_eval('can_be_archived?', __FILE__, __LINE__)).to eq true
+    end
+
+    it 'should return true for @old_book_bad' do
+      expect(@old_book_bad.instance_eval('can_be_archived?', __FILE__, __LINE__)).to eq true
     end
   end
 end
