@@ -27,3 +27,25 @@ module LoadData
     end
   end
 end
+
+def load_albums
+  return unless File.exist?('./storage/musicalbum.json')
+
+  musicalbums_loaded = JSON.parse(File.read('./storage/musicalbum.json'))
+  @music_albums = musicalbums_loaded.map do |album|
+    album_obj = MusicAlbum.new(album['publish_date'], album['on_spotify'], archived: album['archived'])
+    album_obj.genre = @genres.find { |g| g.id == album['genre']['id'] }
+    album_obj.label = @labels.find { |l| l.id == album['label']['id'] }
+    album_obj.author = @authors.find { |a| a.id == album['author']['id'] }
+    album_obj
+  end
+end
+
+def load_genres
+  return unless File.exist?('./storage/genres.json')
+
+  genres_loaded = JSON.parse(File.read('./storage/genres.json'))
+  @genres = genres_loaded.map do |genre|
+    Genre.new(genre['name'], genre['id'])
+  end
+end
