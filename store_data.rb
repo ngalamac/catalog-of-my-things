@@ -6,7 +6,6 @@ module StoreData
     save_labels
   end
 
-
   def save_authors
     labels_json = @labels.map do |label|
       {
@@ -32,5 +31,4 @@ module StoreData
     end
     File.write('./storage/games.json', JSON.pretty_generate(games_json))
   end
-
 end

@@ -26,5 +26,4 @@ module LoadData
       game_obj
     end
   end
-
 end
