@@ -11,4 +11,14 @@ module AddProps
     @authors << author unless @authors.include?(author)
     item.author = author
   end
+
+  def choose_label(item)
+    puts 'Label title:'
+    title = gets.chomp.to_s
+    puts 'Label color:'
+    color = gets.chomp.to_s
+    label = @labels.find { |l| l.title == title } || Label.new(title, color)
+    @labels << label unless @labels.include?(label)
+    item.label = label
+  end
 end
