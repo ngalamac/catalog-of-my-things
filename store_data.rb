@@ -32,3 +32,32 @@ module StoreData
     File.write('./storage/games.json', JSON.pretty_generate(games_json))
   end
 end
+
+def save_albums
+  all_music_albums = @music_albums.map do |album|
+    {
+      publish_date: album.publish_date,
+      on_spotify: album.on_spotify,
+      genre_name: album.genre.name,
+      archived: album.archived,
+      label: {
+        id: album.label.id
+      },
+      genre: {
+        id: album.genre.id
+      },
+      author: {
+        id: album.author.id
+      }
+    }
+  end
+  File.write('./storage/musicalbum.json', JSON.pretty_generate(all_music_albums))
+end
+
+def save_genres
+  all_genres = @genres.map do |genre|
+    { id: genre.id, name: genre.name }
+  end
+  File.write('./storage/genres.json', JSON.pretty_generate(all_genres))
+end
+
