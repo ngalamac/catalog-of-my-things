@@ -21,4 +21,12 @@ module AddProps
     @labels << label unless @labels.include?(label)
     item.label = label
   end
+
+  def choose_genre(item)
+    puts 'Enter genre:'
+    genre_name = gets.chomp
+    genre = @genres.find { |g| g.name == genre_name } || Genre.new(genre_name)
+    @genres << genre unless @genres.include?(genre)
+    item.genre = genre
+  end
 end
