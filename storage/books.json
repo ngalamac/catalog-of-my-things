@@ -22,6 +22,21 @@
     "author": null
   },
   {
+    "publisher": "Natasha",
+    "cover_state": "good",
+    "publish_date": "2022-05-10",
+    "archived": false,
+    "label": {
+      "id": 568
+    },
+    "genre": {
+      "id": 564
+    },
+    "author": {
+      "id": 162
+    }
+  },
+  {
     "publisher": "ian",
     "cover_state": "good",
     "publish_date": "2010-09-12",
