@@ -1,16 +1,28 @@
 require './store_data'
 require './load_data'
 
-require './options/list_author'
+require './options/list_books'
+require './options/list_labels'
+require './options/add_book'
+require './options/list_genres'
+require './options/list_music_album'
+require './options/add_musicalbum'
 require './options/add_game'
 require './options/list_game'
+require './options/list_author'
 
 class App
   include ListGames
+  include ListAuthors
   include AddGame
+  include AddMusicAlbum
+  include ListMusicAlbums
+  include ListGenres
+  include AddBook
+  include ListBooks
+  include ListLabels
 
-
-  include StoreData
+  include PreserveData
   include LoadData
 
   OPTIONS_HASH = {
