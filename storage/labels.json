@@ -1,7 +1,17 @@
 [
   {
-    "id": 811,
-    "first_name": "ian",
-    "last_name": "kiema"
+    "id": 155,
+    "title": "Superman",
+    "color": "white"
+  },
+  {
+    "id": 819,
+    "title": "Robin",
+    "color": "green"
+  },
+  {
+    "id": 462,
+    "title": "Think and grow rich",
+    "color": "yellow"
   }
 ]

@@ -15,7 +15,12 @@ module LoadData
 
     authors_json = JSON.parse(File.read('./storage/authors.json'))
     @authors = authors_json.map do |author|
-      Author.new(author['first_name'], author['last_name'], author['id'])
+      # Use the fetch method to handle missing or nil values
+      first_name = author.fetch('first_name', '')
+      last_name = author.fetch('last_name', '')
+      id = author.fetch('id', nil)
+
+      Author.new(first_name, last_name, id)
     end
   end
 
@@ -40,7 +45,12 @@ module LoadData
       album_obj = MusicAlbum.new(album['publish_date'], album['on_spotify'], archived: album['archived'])
       album_obj.genre = @genres.find { |g| g.id == album['genre']['id'] }
       album_obj.label = @labels.find { |l| l.id == album['label']['id'] }
-      album_obj.author = @authors.find { |a| a.id == album['author']['id'] }
+
+
+      if album['author']
+        album_obj.author = @authors.find { |a| a.id == album['author']['id'] }
+      end
+
       album_obj
     end
   end
@@ -62,7 +72,9 @@ module LoadData
       book_obj = Book.new(book['publisher'], book['cover_state'], book['publish_date'])
       book_obj.genre = @genres.find { |g| g.id == book['genre']['id'] }
       book_obj.label = @labels.find { |l| l.id == book['label']['id'] }
-      book_obj.author = @authors.find { |a| a.id == book['author']['id'] }
+      if book['author']
+        book_obj.author = @authors.find { |a| a.id == book['author']['id'] }
+      end
       book_obj
     end
   end

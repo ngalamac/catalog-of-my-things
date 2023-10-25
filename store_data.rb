@@ -18,7 +18,7 @@ module StoreData
         "last_name": author.last_name
       }
     end
-    File.write('./storage/labels.json', JSON.pretty_generate(author_data))
+    File.write('./storage/authors.json', JSON.pretty_generate(author_data))
   end
 
   def save_games
