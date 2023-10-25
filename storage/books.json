@@ -26,15 +26,9 @@
     "cover_state": "good",
     "publish_date": "2022-05-10",
     "archived": false,
-    "label": {
-      "id": 568
-    },
-    "genre": {
-      "id": 564
-    },
-    "author": {
-      "id": 162
-    }
+    "label": null,
+    "genre": null,
+    "author": null
   },
   {
     "publisher": "ian",
@@ -71,6 +65,32 @@
     },
     "author": {
       "id": 173
+    }
+  },
+  {
+    "publisher": "ian",
+    "cover_state": "good",
+    "publish_date": "2010-09-09",
+    "archived": false,
+    "label": null,
+    "genre": {
+      "id": 496
+    },
+    "author": {
+      "id": 93
+    }
+  },
+  {
+    "publisher": "ian",
+    "cover_state": "good",
+    "publish_date": "2012-03-02",
+    "archived": false,
+    "label": null,
+    "genre": {
+      "id": 380
+    },
+    "author": {
+      "id": 744
     }
   }
 ]

@@ -68,8 +68,8 @@ module LoadData
     books_json = JSON.parse(File.read('./storage/books.json'))
     @books = books_json.map do |book|
       book_obj = Book.new(book['publisher'], book['cover_state'], book['publish_date'])
-      book_obj.genre = @genres.find { |g| g.id == book['genre']['id'] }
-      book_obj.label = @labels.find { |l| l.id == book['label']['id'] }
+      book_obj.genre = @genres.find { |g| g.id == book['genre']['id'] } if book['genre']
+      book_obj.label = @labels.find { |l| l.id == book['label']['id'] } if book['label']
       book_obj.author = @authors.find { |a| a.id == book['author']['id'] } if book['author']
       book_obj
     end
