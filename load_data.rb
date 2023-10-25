@@ -4,6 +4,10 @@ module LoadData
   def load_all_files
     load_authors
     load_games
+    load_albums
+    load_genres
+    load_books
+    load_labels
   end
 
   def load_authors

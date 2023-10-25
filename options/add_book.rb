@@ -1,6 +1,6 @@
 require './classes/book'
 require './classes/label'
-require './options/list_labels'
+require './options/list_label'
 require './options/add_props'
 
 module AddBook
