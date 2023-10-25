@@ -1,4 +1,3 @@
-
 require 'date'
 require_relative 'item'
 
@@ -16,5 +15,3 @@ class MusicAlbum < Item
     super_result && @on_spotify
   end
 end
-
-
