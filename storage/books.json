@@ -20,5 +20,20 @@
       "id": 153
     },
     "author": null
+  },
+  {
+    "publisher": "ian",
+    "cover_state": "good",
+    "publish_date": "2010-09-12",
+    "archived": false,
+    "label": {
+      "id": 823
+    },
+    "genre": {
+      "id": 333
+    },
+    "author": {
+      "id": 811
+    }
   }
 ]
