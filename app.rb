@@ -1,11 +1,11 @@
 require './store_data'
 require './load_data'
 
-require './options/list_books'
-require './options/list_labels'
+require './options/list_book'
+require './options/list_label'
 require './options/add_book'
 require './options/list_genres'
-require './options/list_music_album'
+require './options/list_music_albums'
 require './options/add_musicalbum'
 require './options/add_game'
 require './options/list_game'
@@ -22,7 +22,7 @@ class App
   include ListBooks
   include ListLabels
 
-  include PreserveData
+  include StoreData
   include LoadData
 
   OPTIONS_HASH = {
@@ -30,7 +30,7 @@ class App
     2 => :list_music_albums,
     3 => :list_games,
     4 => :list_genres,
-    5 => :list_labels,
+    5 => :list_label,
     6 => :list_authors,
     7 => :add_book,
     8 => :add_music_album,
