@@ -11,14 +11,14 @@ module StoreData
   end
 
   def save_authors
-    labels_json = @labels.map do |label|
+    author_data = @authors.map do |author|
       {
-        id: label.id,
-        title: label.title,
-        color: label.color
+        "id": author.id,
+        "first_name": author.first_name,
+        "last_name": author.last_name
       }
     end
-    File.write('./storage/labels.json', JSON.pretty_generate(labels_json))
+    File.write('./storage/labels.json', JSON.pretty_generate(author_data))
   end
 
   def save_games
