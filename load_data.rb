@@ -47,9 +47,7 @@ module LoadData
       album_obj.label = @labels.find { |l| l.id == album['label']['id'] }
 
 
-      if album['author']
-        album_obj.author = @authors.find { |a| a.id == album['author']['id'] }
-      end
+      album_obj.author = @authors.find { |a| a.id == album['author']['id'] } if album['author']
 
       album_obj
     end
@@ -72,9 +70,7 @@ module LoadData
       book_obj = Book.new(book['publisher'], book['cover_state'], book['publish_date'])
       book_obj.genre = @genres.find { |g| g.id == book['genre']['id'] }
       book_obj.label = @labels.find { |l| l.id == book['label']['id'] }
-      if book['author']
-        book_obj.author = @authors.find { |a| a.id == book['author']['id'] }
-      end
+      book_obj.author = @authors.find { |a| a.id == book['author']['id'] } if book['author']
       book_obj
     end
   end

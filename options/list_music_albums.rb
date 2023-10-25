@@ -1,6 +1,7 @@
 module ListMusicAlbums
   def list_music_albums
     puts "\nALBUMS LIST:\n"
+
     if @music_albums.empty?
       puts 'No music albums available.'
     else
