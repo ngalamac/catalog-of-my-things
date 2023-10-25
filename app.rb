@@ -30,7 +30,7 @@ class App
     2 => :list_music_albums,
     3 => :list_games,
     4 => :list_genres,
-    5 => :list_label,
+    5 => :list_labels,
     6 => :list_authors,
     7 => :add_book,
     8 => :add_music_album,

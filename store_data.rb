@@ -4,6 +4,10 @@ module StoreData
   def save_all_files
     save_games
     save_labels
+    save_albums
+    save_books
+    save_authors
+    save_genres
   end
 
   def save_authors
@@ -18,18 +22,25 @@ module StoreData
   end
 
   def save_games
-    games_json = @games.map do |game|
+    games_data = @games.map do |game|
+      label_id = game.label&.id
+
       {
-        multiplayer: game.multiplayer,
-        last_played_at: game.last_played_at,
-        publish_date: game.publish_date,
-        archived: game.archived,
-        label: {
-          id: game.label.id
+        'multiplayer' => game.multiplayer,
+        'last_played_at' => game.last_played_at.to_s,
+        'publish_date' => game.publish_date.to_s,
+        'archived' => game.archived,
+        'label' => {
+          'id' => label_id, # Handle nil label gracefully
+          'title' => game.label&.title, # Access label title safely
+          'color' => game.label&.color # Access label color safely
         }
       }
     end
-    File.write('./storage/games.json', JSON.pretty_generate(games_json))
+
+    File.open('./storage/games.json', 'w') do |file|
+      file.puts JSON.pretty_generate(games_data)
+    end
   end
 
   def save_albums
@@ -37,17 +48,11 @@ module StoreData
       {
         publish_date: album.publish_date,
         on_spotify: album.on_spotify,
-        genre_name: album.genre.name,
+        genre_name: album.genre.nil? ? nil : album.genre.name,
         archived: album.archived,
-        label: {
-          id: album.label.id
-        },
-        genre: {
-          id: album.genre.id
-        },
-        author: {
-          id: album.author.id
-        }
+        label: album.label.nil? ? nil : { id: album.label.id },
+        genre: album.genre.nil? ? nil : { id: album.genre.id },
+        author: album.author.nil? ? nil : { id: album.author.id }
       }
     end
     File.write('./storage/musicalbum.json', JSON.pretty_generate(all_music_albums))
@@ -67,15 +72,9 @@ module StoreData
         cover_state: book.cover_state,
         publish_date: book.publish_date,
         archived: book.archived,
-        label: {
-          id: book.label.id
-        },
-        genre: {
-          id: book.genre.id
-        },
-        author: {
-          id: book.author.id
-        }
+        label: book.label.nil? ? nil : { id: book.label.id },
+        genre: book.genre.nil? ? nil : { id: book.genre.id },
+        author: book.author.nil? ? nil : { id: book.author.id }
       }
     end
     File.write('./storage/books.json', JSON.pretty_generate(books_json))

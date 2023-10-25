@@ -1,12 +1,12 @@
 module ListAuthors
-  def choose_author(item)
-    puts "Enter author's first name:"
-    first_name = gets.chomp.to_s
-    puts "Enter author's second name:"
-    last_name = gets.chomp.to_s
-    author = @authors.find { |a| a.first_name == first_name && a.last_name == last_name } ||
-             Author.new(first_name, last_name)
-    @authors << author unless @authors.include?(author)
-    item.author = author
+  def list_authors
+    puts "\nAUTHORS LIST:\n"
+    if @authors.empty?
+      puts 'No authors found'
+    else
+      @authors.each_with_index do |author, i|
+        puts "#{i + 1}) ID: #{author.id}, Name: #{author.first_name} #{author.last_name}"
+      end
+    end
   end
 end

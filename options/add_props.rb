@@ -1,3 +1,5 @@
+require './classes/genre'
+require './classes/label'
 require './classes/author'
 
 module AddProps

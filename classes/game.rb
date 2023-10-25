@@ -7,7 +7,11 @@ class Game < Item
   def initialize(multiplayer, last_played_at, publish_date, archived: false)
     super(publish_date, archived: archived)
     @multiplayer = multiplayer
-    @last_played_at = (Date.parse(last_played_at) if last_played_at.is_a?(String))
+    begin
+      @last_played_at = Date.parse(last_played_at) if last_played_at.is_a?(String)
+    rescue Date::Error
+      @last_played_at = nil
+    end
   end
 
   def can_be_archived?
