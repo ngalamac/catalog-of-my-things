@@ -13,12 +13,12 @@ module StoreData
   def save_authors
     author_data = @authors.map do |author|
       {
-        "id": author.id,
-        "first_name": author.first_name,
-        "last_name": author.last_name
+        id: author.id,
+        first_name: author.first_name,
+        last_name: author.last_name
       }
     end
-    File.write('./storage/labels.json', JSON.pretty_generate(author_data))
+    File.write('./storage/authors.json', JSON.pretty_generate(author_data))
   end
 
   def save_games
@@ -48,7 +48,7 @@ module StoreData
       {
         publish_date: album.publish_date,
         on_spotify: album.on_spotify,
-        genre_name: album.genre.nil? ? nil : album.genre.name,
+        genre_name: album.genre&.name,
         archived: album.archived,
         label: album.label.nil? ? nil : { id: album.label.id },
         genre: album.genre.nil? ? nil : { id: album.genre.id },
