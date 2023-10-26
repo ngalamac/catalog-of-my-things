@@ -45,8 +45,6 @@ module LoadData
       album_obj = MusicAlbum.new(album['publish_date'], album['on_spotify'], archived: album['archived'])
       album_obj.genre = @genres.find { |g| g.id == album['genre']['id'] }
       album_obj.label = @labels.find { |l| l.id == album['label']['id'] }
-
-
       album_obj.author = @authors.find { |a| a.id == album['author']['id'] } if album['author']
 
       album_obj
