@@ -60,9 +60,7 @@
     "publish_date": "2019-09-09",
     "archived": false,
     "label": null,
-    "genre": {
-      "id": 250
-    },
+    "genre": null,
     "author": {
       "id": 173
     }
