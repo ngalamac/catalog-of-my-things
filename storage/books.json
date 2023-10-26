@@ -26,29 +26,32 @@
     "cover_state": "good",
     "publish_date": "2022-05-10",
     "archived": false,
-    "label": {
-      "id": 568
-    },
-    "genre": {
-      "id": 564
-    },
-    "author": {
-      "id": 162
-    }
+    "label": null,
+    "genre": null,
+    "author": null
   },
   {
     "publisher": "ian",
     "cover_state": "good",
     "publish_date": "2010-09-12",
     "archived": false,
+    "label": null,
+    "genre": null,
+    "author": null
+  },
+  {
+    "publisher": "jk",
+    "cover_state": "good",
+    "publish_date": "2020-10-10",
+    "archived": false,
     "label": {
-      "id": 823
+      "id": 198
     },
     "genre": {
-      "id": 333
+      "id": 250
     },
     "author": {
-      "id": 811
+      "id": 186
     }
   }
 ]
