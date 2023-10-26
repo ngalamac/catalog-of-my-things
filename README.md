@@ -57,6 +57,7 @@ The **Catalog of my things**, a Ruby-built catalog app allows users to efficient
 
 - [Video link](#)
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
