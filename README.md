@@ -55,7 +55,7 @@ The **Catalog of my things**, a Ruby-built catalog app allows users to efficient
 
 💻 Video Presentation <a name="video-project-presentation"></a>
 
-- [Video link](#)
+- [Video link](https://drive.google.com/file/d/10S9eyucYDryX_1oejeDZno4VdMAvmuK1/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
