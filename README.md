@@ -83,7 +83,7 @@ In order to run this project you need:
 Clone this repository to your desired folder by using this 👇️ command :
 
 ```
-git clone https://github.com/iankiema/Ruby-capstone-project.git
+git clone https://github.com/ngalamac/catalog-of-my-things.git
 ```
 
 ### Install
@@ -91,7 +91,7 @@ git clone https://github.com/iankiema/Ruby-capstone-project.git
 Go to the project directory:
 
 ```
- cd Ruby-capstone-project
+ cd catalog-of-my-things
 ```
 
 Before to run the program, verify that you have Ruby installed on your OS running the following command:
@@ -174,7 +174,7 @@ The specific features that are added will depend on the needs and wants of the u
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/iankiema/Ruby-capstone-project/issues).
+Feel free to check the [issues page](https://github.com/ngalamac/catalog-of-my-things/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
