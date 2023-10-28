@@ -1,0 +1,94 @@
+[
+  {
+    "publisher": "ian",
+    "cover_state": "good",
+    "publish_date": "2012-09-09",
+    "archived": false,
+    "label": null,
+    "genre": {
+      "id": 140
+    },
+    "author": null
+  },
+  {
+    "publisher": "ian",
+    "cover_state": "good",
+    "publish_date": "2010-12-12",
+    "archived": false,
+    "label": null,
+    "genre": {
+      "id": 153
+    },
+    "author": null
+  },
+  {
+    "publisher": "Natasha",
+    "cover_state": "good",
+    "publish_date": "2022-05-10",
+    "archived": false,
+    "label": null,
+    "genre": null,
+    "author": null
+  },
+  {
+    "publisher": "ian",
+    "cover_state": "good",
+    "publish_date": "2010-09-12",
+    "archived": false,
+    "label": null,
+    "genre": {
+      "id": 333
+    },
+    "author": null
+  },
+  {
+    "publisher": "ian",
+    "cover_state": "bad",
+    "publish_date": "2012-09-09",
+    "archived": false,
+    "label": null,
+    "genre": {
+      "id": 29
+    },
+    "author": {
+      "id": 63
+    }
+  },
+  {
+    "publisher": "nick",
+    "cover_state": "good",
+    "publish_date": "2019-09-09",
+    "archived": false,
+    "label": null,
+    "genre": null,
+    "author": {
+      "id": 173
+    }
+  },
+  {
+    "publisher": "ian",
+    "cover_state": "good",
+    "publish_date": "2010-09-09",
+    "archived": false,
+    "label": null,
+    "genre": {
+      "id": 496
+    },
+    "author": {
+      "id": 93
+    }
+  },
+  {
+    "publisher": "ian",
+    "cover_state": "good",
+    "publish_date": "2012-03-02",
+    "archived": false,
+    "label": null,
+    "genre": {
+      "id": 380
+    },
+    "author": {
+      "id": 744
+    }
+  }
+]
